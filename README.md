@@ -33,3 +33,20 @@ In addition to the method hitEnd(),  we use also the method_compile(String str)_
 
   The method matches() returns TRUE if and only if there is the full match between substrRegex  and input. The method hitEnd()      returns TRUE if and only if there is the partial match between some substring  starting at the position 0 of substrRegex  and input.     
 
+### The validity of the regular expression
+
+The method compile(String str) checks the validity of the regular expression of the substrings taken from regex. This method throws     exception defined by the class java.util.regex.PatternSyntaxException.  The first time this exception is caught for the full regular     expression regex. In the case of not valid string regex (i.e. the exception is caught), the analysis is stopped, see method      
+
+                   private boolean checkSyntaxException(String regex).
+
+of the class PartialMatch. The second time this exception is caught for every substring of regex analyzed in the loop. In this case     
+of “not valid string”, the analysis is continued.  This exception is caught as follows:      
+  
+     try{
+         p = Pattern.compile(substrRegex);
+      }catch(java.util.regex.PatternSyntaxException  e){
+             System.out.println(“PatternSyntaxException: " + 
+             e.getMessage() + ",however, the analysis will be continued \n");
+       continue;
+      }
+
