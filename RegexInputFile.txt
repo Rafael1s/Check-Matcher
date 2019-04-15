@@ -1,0 +1,187 @@
+; The format of any line:
+; regex input
+; If "input" contains spaces the format is as follows:
+; regex "any   input" 
+; If "input" contains only spaces the structure is:
+; regex "    "
+; The empty line or the line containing ';' in the first column is a comment line and it is skipped.
+;
+
+;   partial 
+AAABXY111AB  ABX
+;   partial
+0-9[AZ\\w?|A]AABXY111ABBABX444  ABX
+;   full
+AAABXY111AB AAABXY111AB
+;   partial
+AAABXY111AB AAABXY1
+;   partial
+AAABXY111AB 111AB
+;   full
+^\w+$  Hello
+;   full
+^\w+$  World
+;   no match
+^\w+$ "Hello World"
+;   no match
+^\w+$  "     "
+;   partial
+^\w+\s+\w+$  World
+;   no match
+^\w+\s+\w+$ "Hello World!"
+;   full 
+^\w+\s+\w+.$ "Hello World!"
+;   partial
+^\w+\s+\w+$  "     "
+;   partial
+AAAAAB AA
+;   no match
+AAAAAB BB
+;   no match
+[0-9]abc  lab
+;   no match
+cat  bobca
+;   no match
+r((ege)|(geg))x  regexx
+;   partial
+r((ege)|(geg))xyz  xyz
+;   full
+r((ege)|(geg))x  regex
+;   partial
+r((ege)|(geg))x  rege
+;   partial
+r((ege)|(geg))x  egex
+;   no match
+^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$   224..
+;   no match
+^2(2[4-9]|3\\d)\\.   224.
+;   full 
+^2(2[4-9]|3\\d)\.   224.
+;   no match
+^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$   224.
+;   partial
+^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$   224
+;   no match
+[a-z]  hello
+;   full
+[a-z]*  hello
+;   full
+bbba+  bbbaaa
+;   no match
+bbba+  bbbaaaxxx
+;   no match
+bbba+  mauze
+;   full
+a{3,5}b aaab
+;   partial
+a{3,5}bcde bcd
+;   partial
+a\{3bcd\}  bcd
+;   full
+\[.\]  [f]
+;   syntax exception - no match
+[.\]  [f]
+;   partial
+\[bcde\] cde 
+;   partial
+\[bcde\] cde]
+;   no match
+\[bcde\] cde\]
+;   syntax exception - no match
+cde)fgh fgh
+;   partial
+(cde)fgh fgh
+;   partial
+/\d{2}-\d{5}   234
+;   full
+\d{5} 12345
+;   partial
+\d{5} 1234
+;   partial
+/\d{2}-\d{5}  12-34 
+;   partial
+/\d{2}-\d{5}  12-12345
+;   full
+\d{2}-\d{5}  12-12345
+;   full (\s - whitespace)
+^\s*$   "         "
+;   no match (\S - no whitespace)
+^\S*$   "         "
+;   full
+^\S*$   1234567
+;   partial
+abc;  c;
+;   full
+[hc]+at hhhcccat
+;   no match
+[hc]+at hhhcccaat
+;   full
+\w+  ______
+;   partial
+\w+abcd  ______
+;   no match
+[^abc] xyz
+;   full (any char other than 'a', 'b', 'c')
+[^abc] x
+;   partial
+[^abc]def xd
+;   full
+^[hc]at  hat
+;   no match
+^[hc]at  _hat
+;   full
+s.*  sequence
+;   partial
+q.*  sequence
+;   full
+q.*  q_sequence
+;   partial
+[A-F]+[a-f]*[0-9]* abcd1234
+;   full
+[A-F]*[a-f]*[0-9]* abcd1234
+;   partial
+[A-F][a-f]*[0-9]* abcd1234
+;   full
+[A-F][a-f]*[0-9]* Eabcd1234
+;   full
+(^[2][5][0-5].|^[2][0-4][0-9].|^[1][0-9][0-9].|^[0-9][0-9].|^[0-9].)([2][0-5][0-5].|[2][0-4][0-9].|[1][0-9][0-9].|[0-9][0-9].|[0-9].)$   45.254
+;   full
+([0-9][0-9].|[0-9].)$   264
+;   partial
+([0-9][0-9].|[0-9].)$   2
+;   full
+^[a-z0-9_-]{3,16}$  my-us3r_n4m3
+;   full
+^(\d+)\.(\d+)\.(\d+)\.(\d+)$  177.255.255.255
+;   partial
+^(\d+)\.(\d+)\.(\d+)\.(\d+)$  177.255.255
+;   full
+(<.*>)  <p><b>Wikipedia</b>
+;   full (lazy quantifier)
+(<.*?>) <p><b>Wikipedia</b>
+;   partial
+^[a-z0-9-]+\d+$   my-title-here
+;   no match
+^[a-z0-9-]+$   my_title_here
+;   partial
+A{2,9}xyz     AAAAAxy
+;   full
+^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$   john@doe.com 
+;   partial
+^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$   john@doe.something
+;   full
+^([a-z0-9_\.-]+)@([\da-z\.-]+)   john@doe.something
+;   full
+^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$  '<a href="http://net.tutsplus.com/">Nettuts+</a>'
+;  syntax exception - no match
+*****      123
+;  syntax exception - no match
+?\d*       12
+;
+12\w        3
+; full 
+^\w+$  Albert
+; full 
+^\w+$  Einshtein
+;  No even partial match
+^\w+$  "Albert Einshtein"
