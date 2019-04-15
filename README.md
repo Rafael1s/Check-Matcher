@@ -21,3 +21,8 @@ as well as for the string “World”. However, the object _PartialMatch_  retur
 The input parameters are the regular expression **Regex** and the examined string _Input_. 
 
 
+### The key loop of analysis, the method  isPartialMatch 
+
+The key method used in _isPartialMatch()_ is the method _hitEnd()_ from the class _java.util.regex.Matcher._
+This method returns TRUE if there is a partial match between the string input and substring substrRegex of the regular expression regex. The metod _hitEnd()_ checks the partial match for all substrings substrRegex starting from the position 0 of substrRegex. The algorithm performs the loop by the length of the string regex.  Assume the length of the string regex is n.  The algorithm analyzes all substrings substrRegex of regex from positions k (k=0,1,…n-1) to n-1 and  performs the method hitEnd().  Thus, all substrings of regex are checked. 
+
