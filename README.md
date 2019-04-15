@@ -9,9 +9,9 @@
    The main idea of the algorithm is to get all substrings of the given regular expression **Regex** and to apply the method   
 _hitEnd()_ of the class _java.util.regex.Matcher_. If the examined string _Input_ matches some substring of **Regex** then this    substring _Input_ can be completed to the string which is in full match to **Regex**. The proof of the last suggestion is not so     trivial, but it is    checked on all pairs contained in the file _RegexInputFile_.     
 
-     Consider an example:  _Regex = “[A-F][a-f]*[0-9]*_. The string _Input_ = _abcd1234_ is in the full match with the  sub-expression    _[a-f]*[0-9]*”_  The string Input can be completed, e.g. to _Eabcd1234_ which is already in full match with **Regex**.These examples    are taken from the file _RegexInputFile_.        
+   Consider an example:  _Regex = “[A-F][a-f]*[0-9]*_. The string _Input_ = _abcd1234_ is in the full match with the sub-expression     _[a-f]*[0-9]*”_  The string Input can be completed, e.g. to _Eabcd1234_ which is already in full match with **Regex**.These examples      are taken from the file _RegexInputFile_.        
 
-   The main algorithm is implemented in Java, in the class _PartialMatch_. The classes _java.util.regex.Matcher_,  _java.util.regex.Pattern_  and _java.util.regex.PatternSyntaxException_ of the package _java.util.regex_  are used in this implementations. The principal method of the class PartialMatch is  
+   The main algorithm is implemented in Java, in the class _PartialMatch_. The classes _java.util.regex.Matcher_, _java.util.regex.Pattern_  and _java.util.regex.PatternSyntaxException_ of the package _java.util.regex_  are used in this implementations. The principal method of the class PartialMatch is  
                 __public  boolean  isPartialMatch(String regex,  String input)__  
 
 The input parameters are the regular expression **Regex** and the examined string _Input_. 
