@@ -1,8 +1,10 @@
 ## Match and Partial Match for Regular Expression
 
-### PartialMatch for the Regular Expression
+## 1. PartialMatch for the Regular Expression
 
    The regular expression describes the format of the string. The object _PartialMatch_ checks if the given string answers to the     conditions of the regular expression.  For example, the string ^\w describes the  expression containing one or more symbols. For this    string, the object _PartialMatch_ returns **FULL MATCH** for the string “Hello” as well as for the string “World”. However, the object   _PartialMatch_  returns **NO PARTIAL MATCH** for the string “Hello World”.    
+
+## 2.	The algorithm description, the class PartialMatch
 
 ### The main idea of the algorithm 
 
@@ -49,4 +51,78 @@ of “not valid string”, the analysis is continued.  This exception is caught 
              e.getMessage() + ",however, the analysis will be continued \n");
        continue;
       }
+
+###   More checks in isPartialMatch(), class SpecialCharacters
+
+For each substring of regex, some additional checks are performed. These checks are carried out by the following methods of     
+the class _SpecialCharacters_.   Apparently, some of these methods can be dropped,  then the exception    java.util.regex.PatternSyntaxException will be generated.  However, possibly, the further developing of checks of the class      _SpecialCharacters_ can be used for better understanding of the lexical problems of regular expressions.  
+
+   isQuantifier(String str,  int i)
+
+The substring sustrRegex (substring of Regex) can’t start from a quantifier  (i.e., from symbols _*, +, ?_). The method        
+_isQuantifier()_ checks this situation. 
+
+   isMetachar2bytes(String str, int i)
+    
+   This method checks that the current two bytes are started from the backslash “\”. For example, consider the regular expression      “\w…”.  The substring starting from the second byte is “w…” can be valid and don’t generate “exception”, but can generate wrong    
+ value of methods matches() and hitEnd().  If isMetachar2bytes() returns TRUE,  the method isPartialMatch() increases index i by 2.      
+   unmatchedBrackedPair(String regex, String substrRegex, int i)
+
+For any type of parenthesis, it is checked that closing parenthesis is not preceded by an opening parenthesis, only if it is not the      case of escaped parenthesis like “\(“ or “\[“  or “\{“.   The method  _unmatchedBrackedPair()_ responsible for this case.
+
+   unclosedParenthesis(String str, int i)
+
+For any opening parenthesis, the substring substrRegex is checked for existence of a closing parenthesis,  only if it is not the case of escaped parenthesis like “\(“ or “\[“  or “\{“.  
+
+
+## 3. Description of classes in the package CheckMatcher
+
+The package CheckMatcher contains 5 classes and the following methods:   
+
+## TestMatch    
+public class TestMatch   //  (TestMatch.java)
+      public static void main(String args[])  
+     
+Testing of all pairs (Regex, Input) given in the file RegexInputFile.
+     
+## Reader
+public class  Reader      // (Reader.java)
+     public boolean readLinesRegexInput(String fileName)
+     public ArrayList<LineRegexInput>  getArrayListOfRegexInput()
+     private String[] tokenize(String line)
+     private String getSecondToken(String line,  StringTokenizer strTr)
+
+Read from the file all lines containing pairs (Regex, Input) and tokenize them. 
+     
+## LineRegexInput   
+public class LineRegexInput   //  (LineRegexInput.java)
+     public LineRegexInput (String reg, String inp)  //  ctor
+     public String getRegex()
+     public String getInput()
+
+The class contains only one pair (Regex, Input) and access methods for these fields. 
+
+## PartialMatch
+
+public class PartialMatch    //  (PartialMatch.java)
+     public Boolean isPartialMatch(String regex, String input) // The principal method
+     public void loopByAllRegexAndInputLines(ArrayList<LineRegexInput>  arrayLines)
+     private Boolean checkSyntaxException(String regex)
+
+The class contains the principal method _isPartialMatch(String regex, String input)_.
+This method uses classes _java.util.regex.Matcher_,  _java.util.regex.Pattern_  and 
+_java.util.regex.PatternSyntaxException_ of the package _java.util.regex_.  
+   
+## SpecialCharacters    
+
+ public class SpecialCharacters    //  (SpecialCharacters.java)
+    public boolean isQuantifier(String str,  int i)
+    public boolean isMetachar2bytes(String str, int i)
+    public boolean unmatchedBrackedPair(String regex, String substrRegex, int i)
+    public boolean unclosedParenthesis(String str, int i)
+    private Boolean unmatchedBr(String regex, String substrRegex, int i,  char leftBr,  char rightBr)
+
+This class contains the methods performing addition checks for the _substrRegex_.
+
+
 
