@@ -80,12 +80,14 @@ For any opening parenthesis, the substring substrRegex is checked for existence 
 The package CheckMatcher contains 5 classes and the following methods:   
 
 ## TestMatch    
+
 public class TestMatch   //  (TestMatch.java)
       public static void main(String args[])  
      
 Testing of all pairs (Regex, Input) given in the file RegexInputFile.
      
 ## Reader
+
 public class  Reader      // (Reader.java)
      public boolean readLinesRegexInput(String fileName)
      public ArrayList<LineRegexInput>  getArrayListOfRegexInput()
@@ -95,6 +97,7 @@ public class  Reader      // (Reader.java)
 Read from the file all lines containing pairs (Regex, Input) and tokenize them. 
      
 ## LineRegexInput   
+
 public class LineRegexInput   //  (LineRegexInput.java)
      public LineRegexInput (String reg, String inp)  //  ctor
      public String getRegex()
@@ -157,6 +160,74 @@ is used for getting parameter Input taking into account all conditions related  
 
 For every pair (_Regex_, _Input_) the new instance of the class LineRegexInput is created and added to the _arrayLines_ 
 of the type _ArrayList<LineRegexInput>._ 
+
+## 5. Test cases 
+
+The file RegexInputFile.txt contains 86 pairs (_Regex_, _Input_) intended for testing.  
+There are 4 groups of scenarios:  **‘Partial Match’**,  **‘Match’**,  **‘No match’**, **‘Syntax exception’**.  
+For the typical examples of these groups, see below.    
+
+### ‘Partial Match’ examples of (_Regex_, _Input_) 
+
+r((ege)|(geg))x                                rege    
+r((ege)|(geg))x                                egex    
+^\w+\s+\w+$                                  "     "
+^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$   224   
+a{3,5}bcde                                     bcd    
+a\{3bcd\}                                      bcd   
+\[bcde\]                                       cde]  
+\d{5}                                          1234
+/\d{2}-\d{5}                                   12-34 
+/\d{2}-\d{5}                                   12-12345
+^(\d+)\.(\d+)\.(\d+)\.(\d+)$                   177.255.255     
+
+### ‘Match’ examples of (_Regex_, _Input_) 
+
+r((ege)|(geg))x                                regex  
+^2(2[4-9]|3\\d)\.                              224.
+[a-z]*                                         hello
+bbba+                                          bbbaaa
+a{3,5}b                                        aaab
+\[.\]                                          [f]
+\d{5}                                          12345
+\w+                                            ______
+^[hc]at                                        hat
+s.*                                            sequence
+^(\d+)\.(\d+)\.(\d+)\.(\d+)$                   177.255.255.255
+
+### ‘No Match’ examples of (_Regex_, _Input_) 
+^\w+$                                          "Hello World"
+^\w+$                                          "     "
+^\w+\s+\w+$                                    "Hello World!"
+[0-9]abc                                       lab
+r((ege)|(geg))x                                regexx
+^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$      224.
+[a-z]                                          hello
+\[bcde\]                                       cde\]
+^[a-z0-9-]+$                                    my_title_here
+
+
+### ‘Syntax Exception’ examples of (_Regex_, _Input_)
+
+cde)fgh                              fgh
+******                              123
+?\d*                                   12
+
+### Additional test cases that need to be done
+
+1.	PERL oriented regular extensions   
+2.	Lazy quantification scenarios    
+3.	Unicode cases   
+4.	Scenarios containing hex values   
+5.	Scenarios containing  URL slugs   
+6.	More anchoring scenarios    
+7.	More comprehensive scenarios with grouping and parentheses
+
+
+
+
+
+
 
 
 _
