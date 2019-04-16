@@ -1,0 +1,572 @@
+Size of the array of pairs (Regex, Input): 86
+
+Regex: AAABXY111AB, Input: ABX
+PARTIAL MATCH: Pattern: ABXY111AB, Input = ABX, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: AAABXY111AB and Input: ABX
+
+Regex: 0-9[AZ\\w?|A]AABXY111ABBABX444, Input: ABX
+Unmatched closing ], i = 4 for regex substr  AZ\\w?|A]AABXY111ABBABX444
+Unmatched closing ], i = 5 for regex substr  Z\\w?|A]AABXY111ABBABX444
+Unmatched closing ], i = 6 for regex substr  \\w?|A]AABXY111ABBABX444
+Unmatched closing ], i = 7 for regex substr  \w?|A]AABXY111ABBABX444
+Unmatched closing ], i = 8 for regex substr  w?|A]AABXY111ABBABX444
+Quantifier = ?
+Unmatched closing ], i = 10 for regex substr  |A]AABXY111ABBABX444
+Unmatched closing ], i = 11 for regex substr  A]AABXY111ABBABX444
+Unmatched closing ], i = 12 for regex substr  ]AABXY111ABBABX444
+PARTIAL MATCH: Pattern: ABXY111ABBABX444, Input = ABX, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: 0-9[AZ\\w?|A]AABXY111ABBABX444 and Input: ABX
+
+Regex: AAABXY111AB, Input: AAABXY111AB
+FULL MATCH: Pattern: AAABXY111AB, Input = AAABXY111AB, matches: TRUE 
+There is a match for Regex: AAABXY111AB and Input: AAABXY111AB
+
+Regex: AAABXY111AB, Input: AAABXY1
+PARTIAL MATCH: Pattern: AAABXY111AB, Input = AAABXY1, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: AAABXY111AB and Input: AAABXY1
+
+Regex: AAABXY111AB, Input: 111AB
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: 111AB, Input = 111AB, matches: TRUE 
+There is a match for Regex: AAABXY111AB and Input: 111AB
+
+Regex: ^\w+$, Input: Hello
+FULL MATCH: Pattern: ^\w+$, Input = Hello, matches: TRUE 
+There is a match for Regex: ^\w+$ and Input: Hello
+
+Regex: ^\w+$, Input: World
+FULL MATCH: Pattern: ^\w+$, Input = World, matches: TRUE 
+There is a match for Regex: ^\w+$ and Input: World
+
+Regex: ^\w+$, Input: Hello World
+isMetachar2bytes: i = 1, char: w
+Quantifier = +
+No even partial match for Regex: ^\w+$ and Input: Hello World
+
+Regex: ^\w+$, Input:      
+isMetachar2bytes: i = 1, char: w
+Quantifier = +
+No even partial match for Regex: ^\w+$ and Input:      
+
+Regex: ^\w+\s+\w+$, Input: World
+PARTIAL MATCH: Pattern: ^\w+\s+\w+$, Input = World, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: ^\w+\s+\w+$ and Input: World
+
+Regex: ^\w+\s+\w+$, Input: Hello World!
+isMetachar2bytes: i = 1, char: w
+Quantifier = +
+isMetachar2bytes: i = 4, char: s
+Quantifier = +
+isMetachar2bytes: i = 7, char: w
+Quantifier = +
+No even partial match for Regex: ^\w+\s+\w+$ and Input: Hello World!
+
+Regex: ^\w+\s+\w+.$, Input: Hello World!
+FULL MATCH: Pattern: ^\w+\s+\w+.$, Input = Hello World!, matches: TRUE 
+There is a match for Regex: ^\w+\s+\w+.$ and Input: Hello World!
+
+Regex: ^\w+\s+\w+$, Input:      
+isMetachar2bytes: i = 1, char: w
+Quantifier = +
+PARTIAL MATCH: Pattern: \s+\w+$, Input =      , matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: ^\w+\s+\w+$ and Input:      
+
+Regex: AAAAAB, Input: AA
+PARTIAL MATCH: Pattern: AAAAAB, Input = AA, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: AAAAAB and Input: AA
+
+Regex: AAAAAB, Input: BB
+No even partial match for Regex: AAAAAB and Input: BB
+
+Regex: [0-9]abc, Input: lab
+Unmatched closing ], i = 1 for regex substr  0-9]abc
+Unmatched closing ], i = 2 for regex substr  -9]abc
+Unmatched closing ], i = 3 for regex substr  9]abc
+Unmatched closing ], i = 4 for regex substr  ]abc
+No even partial match for Regex: [0-9]abc and Input: lab
+
+Regex: cat, Input: bobca
+No even partial match for Regex: cat and Input: bobca
+
+Regex: r((ege)|(geg))x, Input: regexx
+PatternSyntaxException: Unmatched closing ')' near index 10
+(ege)|(geg))x
+          ^, however, the analysis will be continued 
+Unmatched closing ), i = 3 for regex substr  ege)|(geg))x
+Unmatched closing ), i = 4 for regex substr  ge)|(geg))x
+Unmatched closing ), i = 5 for regex substr  e)|(geg))x
+Unmatched closing ), i = 6 for regex substr  )|(geg))x
+PatternSyntaxException: Unmatched closing ')' near index 5
+|(geg))x
+     ^, however, the analysis will be continued 
+PatternSyntaxException: Unmatched closing ')' near index 4
+(geg))x
+    ^, however, the analysis will be continued 
+Unmatched closing ), i = 9 for regex substr  geg))x
+Unmatched closing ), i = 10 for regex substr  eg))x
+Unmatched closing ), i = 11 for regex substr  g))x
+Unmatched closing ), i = 12 for regex substr  ))x
+Unmatched closing ), i = 13 for regex substr  )x
+No even partial match for Regex: r((ege)|(geg))x and Input: regexx
+
+Regex: r((ege)|(geg))xyz, Input: xyz
+PatternSyntaxException: Unmatched closing ')' near index 10
+(ege)|(geg))xyz
+          ^, however, the analysis will be continued 
+Unmatched closing ), i = 3 for regex substr  ege)|(geg))xyz
+Unmatched closing ), i = 4 for regex substr  ge)|(geg))xyz
+Unmatched closing ), i = 5 for regex substr  e)|(geg))xyz
+Unmatched closing ), i = 6 for regex substr  )|(geg))xyz
+PatternSyntaxException: Unmatched closing ')' near index 5
+|(geg))xyz
+     ^, however, the analysis will be continued 
+PatternSyntaxException: Unmatched closing ')' near index 4
+(geg))xyz
+    ^, however, the analysis will be continued 
+Unmatched closing ), i = 9 for regex substr  geg))xyz
+Unmatched closing ), i = 10 for regex substr  eg))xyz
+Unmatched closing ), i = 11 for regex substr  g))xyz
+Unmatched closing ), i = 12 for regex substr  ))xyz
+Unmatched closing ), i = 13 for regex substr  )xyz
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: xyz, Input = xyz, matches: TRUE 
+There is a match for Regex: r((ege)|(geg))xyz and Input: xyz
+
+Regex: r((ege)|(geg))x, Input: regex
+FULL MATCH: Pattern: r((ege)|(geg))x, Input = regex, matches: TRUE 
+There is a match for Regex: r((ege)|(geg))x and Input: regex
+
+Regex: r((ege)|(geg))x, Input: rege
+PARTIAL MATCH: Pattern: r((ege)|(geg))x, Input = rege, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: r((ege)|(geg))x and Input: rege
+
+Regex: r((ege)|(geg))x, Input: egex
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: ((ege)|(geg))x, Input = egex, matches: TRUE 
+There is a match for Regex: r((ege)|(geg))x and Input: egex
+
+Regex: ^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$, Input: 224..
+Unmatched closing ), i = 3 for regex substr  2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 4 for regex substr  [4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 5 for regex substr  4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 6 for regex substr  -9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 7 for regex substr  9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 8 for regex substr  ]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 9 for regex substr  |3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 10 for regex substr  3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 11 for regex substr  \\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 12 for regex substr  \d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 13 for regex substr  d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 14 for regex substr  )(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+PatternSyntaxException: Unmatched closing ')' near index 35
+\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+                                   ^, however, the analysis will be continued 
+PatternSyntaxException: Unmatched closing ')' near index 34
+\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+                                  ^, however, the analysis will be continued 
+PatternSyntaxException: Unmatched closing ')' near index 33
+.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+                                 ^, however, the analysis will be continued 
+PatternSyntaxException: Unmatched closing ')' near index 32
+(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+                                ^, however, the analysis will be continued 
+Unmatched closing ), i = 20 for regex substr  25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 21 for regex substr  5[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 22 for regex substr  [0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 23 for regex substr  0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 24 for regex substr  -5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 25 for regex substr  5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 26 for regex substr  ]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 27 for regex substr  |2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 28 for regex substr  2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 29 for regex substr  [0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 30 for regex substr  0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 31 for regex substr  -4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 32 for regex substr  4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 33 for regex substr  ]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 34 for regex substr  \\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 35 for regex substr  \d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 36 for regex substr  d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 37 for regex substr  |[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 38 for regex substr  [0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 39 for regex substr  0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 40 for regex substr  -1]?\\d?\\d)){3}$
+Unmatched closing ), i = 41 for regex substr  1]?\\d?\\d)){3}$
+Unmatched closing ), i = 42 for regex substr  ]?\\d?\\d)){3}$
+Quantifier = ?
+Unmatched closing ), i = 44 for regex substr  \\d?\\d)){3}$
+Unmatched closing ), i = 45 for regex substr  \d?\\d)){3}$
+Unmatched closing ), i = 46 for regex substr  d?\\d)){3}$
+Quantifier = ?
+Unmatched closing ), i = 48 for regex substr  \\d)){3}$
+Unmatched closing ), i = 49 for regex substr  \d)){3}$
+Unmatched closing ), i = 50 for regex substr  d)){3}$
+Unmatched closing ), i = 51 for regex substr  )){3}$
+Unmatched closing ), i = 52 for regex substr  ){3}$
+Unmatched closing }, i = 54 for regex substr  3}$
+Unmatched closing }, i = 55 for regex substr  }$
+No even partial match for Regex: ^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$ and Input: 224..
+
+Regex: ^2(2[4-9]|3\\d)\\., Input: 224.
+Unmatched closing ), i = 3 for regex substr  2[4-9]|3\\d)\\.
+Unmatched closing ), i = 4 for regex substr  [4-9]|3\\d)\\.
+Unmatched closing ), i = 5 for regex substr  4-9]|3\\d)\\.
+Unmatched closing ), i = 6 for regex substr  -9]|3\\d)\\.
+Unmatched closing ), i = 7 for regex substr  9]|3\\d)\\.
+Unmatched closing ), i = 8 for regex substr  ]|3\\d)\\.
+Unmatched closing ), i = 9 for regex substr  |3\\d)\\.
+Unmatched closing ), i = 10 for regex substr  3\\d)\\.
+Unmatched closing ), i = 11 for regex substr  \\d)\\.
+Unmatched closing ), i = 12 for regex substr  \d)\\.
+Unmatched closing ), i = 13 for regex substr  d)\\.
+Unmatched closing ), i = 14 for regex substr  )\\.
+isMetachar2bytes: i = 15, char: \
+No even partial match for Regex: ^2(2[4-9]|3\\d)\\. and Input: 224.
+
+Regex: ^2(2[4-9]|3\\d)\., Input: 224.
+FULL MATCH: Pattern: ^2(2[4-9]|3\\d)\., Input = 224., matches: TRUE 
+There is a match for Regex: ^2(2[4-9]|3\\d)\. and Input: 224.
+
+Regex: ^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$, Input: 224.
+Unmatched closing ), i = 3 for regex substr  2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 4 for regex substr  [4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 5 for regex substr  4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 6 for regex substr  -9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 7 for regex substr  9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 8 for regex substr  ]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 9 for regex substr  |3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 10 for regex substr  3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 11 for regex substr  \\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 12 for regex substr  \d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 13 for regex substr  d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 14 for regex substr  )(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+PatternSyntaxException: Unmatched closing ')' near index 35
+\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+                                   ^, however, the analysis will be continued 
+PatternSyntaxException: Unmatched closing ')' near index 34
+\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+                                  ^, however, the analysis will be continued 
+PatternSyntaxException: Unmatched closing ')' near index 33
+.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+                                 ^, however, the analysis will be continued 
+PatternSyntaxException: Unmatched closing ')' near index 32
+(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+                                ^, however, the analysis will be continued 
+Unmatched closing ), i = 20 for regex substr  25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 21 for regex substr  5[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 22 for regex substr  [0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 23 for regex substr  0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 24 for regex substr  -5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 25 for regex substr  5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 26 for regex substr  ]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 27 for regex substr  |2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 28 for regex substr  2[0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 29 for regex substr  [0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 30 for regex substr  0-4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 31 for regex substr  -4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 32 for regex substr  4]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 33 for regex substr  ]\\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 34 for regex substr  \\d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 35 for regex substr  \d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 36 for regex substr  d|[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 37 for regex substr  |[0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 38 for regex substr  [0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 39 for regex substr  0-1]?\\d?\\d)){3}$
+Unmatched closing ), i = 40 for regex substr  -1]?\\d?\\d)){3}$
+Unmatched closing ), i = 41 for regex substr  1]?\\d?\\d)){3}$
+Unmatched closing ), i = 42 for regex substr  ]?\\d?\\d)){3}$
+Quantifier = ?
+Unmatched closing ), i = 44 for regex substr  \\d?\\d)){3}$
+Unmatched closing ), i = 45 for regex substr  \d?\\d)){3}$
+Unmatched closing ), i = 46 for regex substr  d?\\d)){3}$
+Quantifier = ?
+Unmatched closing ), i = 48 for regex substr  \\d)){3}$
+Unmatched closing ), i = 49 for regex substr  \d)){3}$
+Unmatched closing ), i = 50 for regex substr  d)){3}$
+Unmatched closing ), i = 51 for regex substr  )){3}$
+Unmatched closing ), i = 52 for regex substr  ){3}$
+Unmatched closing }, i = 54 for regex substr  3}$
+Unmatched closing }, i = 55 for regex substr  }$
+No even partial match for Regex: ^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$ and Input: 224.
+
+Regex: ^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$, Input: 224
+PARTIAL MATCH: Pattern: ^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$, Input = 224, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: ^2(2[4-9]|3\\d)(\\.(25[0-5]|2[0-4]\\d|[0-1]?\\d?\\d)){3}$ and Input: 224
+
+Regex: [a-z], Input: hello
+Unmatched closing ], i = 1 for regex substr  a-z]
+Unmatched closing ], i = 2 for regex substr  -z]
+Unmatched closing ], i = 3 for regex substr  z]
+Unmatched closing ], i = 4 for regex substr  ]
+No even partial match for Regex: [a-z] and Input: hello
+
+Regex: [a-z]*, Input: hello
+FULL MATCH: Pattern: [a-z]*, Input = hello, matches: TRUE 
+There is a match for Regex: [a-z]* and Input: hello
+
+Regex: bbba+, Input: bbbaaa
+FULL MATCH: Pattern: bbba+, Input = bbbaaa, matches: TRUE 
+There is a match for Regex: bbba+ and Input: bbbaaa
+
+Regex: bbba+, Input: bbbaaaxxx
+Quantifier = +
+No even partial match for Regex: bbba+ and Input: bbbaaaxxx
+
+Regex: bbba+, Input: mauze
+Quantifier = +
+No even partial match for Regex: bbba+ and Input: mauze
+
+Regex: a{3,5}b, Input: aaab
+FULL MATCH: Pattern: a{3,5}b, Input = aaab, matches: TRUE 
+There is a match for Regex: a{3,5}b and Input: aaab
+
+Regex: a{3,5}bcde, Input: bcd
+PARTIAL MATCH: Pattern: {3,5}bcde, Input = bcd, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: a{3,5}bcde and Input: bcd
+
+Regex: a\{3bcd\}, Input: bcd
+isMetachar2bytes: i = 1, char: {
+PARTIAL MATCH: Pattern: bcd\}, Input = bcd, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: a\{3bcd\} and Input: bcd
+
+Regex: \[.\], Input: [f]
+FULL MATCH: Pattern: \[.\], Input = [f], matches: TRUE 
+There is a match for Regex: \[.\] and Input: [f]
+
+Regex: [.\], Input: [f]
+PatternSyntaxException: Unclosed character class near index 3
+[.\]
+   ^No even partial match for Regex: [.\] and Input: [f]
+
+Regex: \[bcde\], Input: cde
+isMetachar2bytes: i = 0, char: [
+PARTIAL MATCH: Pattern: cde\], Input = cde, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: \[bcde\] and Input: cde
+
+Regex: \[bcde\], Input: cde]
+isMetachar2bytes: i = 0, char: [
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: cde\], Input = cde], matches: TRUE 
+There is a match for Regex: \[bcde\] and Input: cde]
+
+Regex: \[bcde\], Input: cde\]
+isMetachar2bytes: i = 0, char: [
+isMetachar2bytes: i = 6, char: ]
+No even partial match for Regex: \[bcde\] and Input: cde\]
+
+Regex: cde)fgh, Input: fgh
+PatternSyntaxException: Unmatched closing ')' near index 2
+cde)fgh
+  ^No even partial match for Regex: cde)fgh and Input: fgh
+
+Regex: (cde)fgh, Input: fgh
+Unmatched closing ), i = 1 for regex substr  cde)fgh
+Unmatched closing ), i = 2 for regex substr  de)fgh
+Unmatched closing ), i = 3 for regex substr  e)fgh
+Unmatched closing ), i = 4 for regex substr  )fgh
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: fgh, Input = fgh, matches: TRUE 
+There is a match for Regex: (cde)fgh and Input: fgh
+
+Regex: /\d{2}-\d{5}, Input: 234
+isMetachar2bytes: i = 1, char: d
+Unmatched closing }, i = 4 for regex substr  2}-\d{5}
+Unmatched closing }, i = 5 for regex substr  }-\d{5}
+PARTIAL MATCH: Pattern: \d{5}, Input = 234, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: /\d{2}-\d{5} and Input: 234
+
+Regex: \d{5}, Input: 12345
+FULL MATCH: Pattern: \d{5}, Input = 12345, matches: TRUE 
+There is a match for Regex: \d{5} and Input: 12345
+
+Regex: \d{5}, Input: 1234
+PARTIAL MATCH: Pattern: \d{5}, Input = 1234, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: \d{5} and Input: 1234
+
+Regex: /\d{2}-\d{5}, Input: 12-34
+PARTIAL MATCH: Pattern: \d{2}-\d{5}, Input = 12-34, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: /\d{2}-\d{5} and Input: 12-34
+
+Regex: /\d{2}-\d{5}, Input: 12-12345
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: \d{2}-\d{5}, Input = 12-12345, matches: TRUE 
+There is a match for Regex: /\d{2}-\d{5} and Input: 12-12345
+
+Regex: \d{2}-\d{5}, Input: 12-12345
+FULL MATCH: Pattern: \d{2}-\d{5}, Input = 12-12345, matches: TRUE 
+There is a match for Regex: \d{2}-\d{5} and Input: 12-12345
+
+Regex: ^\s*$, Input:          
+FULL MATCH: Pattern: ^\s*$, Input =          , matches: TRUE 
+There is a match for Regex: ^\s*$ and Input:          
+
+Regex: ^\S*$, Input:          
+isMetachar2bytes: i = 1, char: S
+Quantifier = *
+No even partial match for Regex: ^\S*$ and Input:          
+
+Regex: ^\S*$, Input: 1234567
+FULL MATCH: Pattern: ^\S*$, Input = 1234567, matches: TRUE 
+There is a match for Regex: ^\S*$ and Input: 1234567
+
+Regex: abc;, Input: c;
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: c;, Input = c;, matches: TRUE 
+There is a match for Regex: abc; and Input: c;
+
+Regex: [hc]+at, Input: hhhcccat
+FULL MATCH: Pattern: [hc]+at, Input = hhhcccat, matches: TRUE 
+There is a match for Regex: [hc]+at and Input: hhhcccat
+
+Regex: [hc]+at, Input: hhhcccaat
+Unmatched closing ], i = 1 for regex substr  hc]+at
+Unmatched closing ], i = 2 for regex substr  c]+at
+Unmatched closing ], i = 3 for regex substr  ]+at
+Quantifier = +
+No even partial match for Regex: [hc]+at and Input: hhhcccaat
+
+Regex: \w+, Input: ______
+FULL MATCH: Pattern: \w+, Input = ______, matches: TRUE 
+There is a match for Regex: \w+ and Input: ______
+
+Regex: \w+abcd, Input: ______
+PARTIAL MATCH: Pattern: \w+abcd, Input = ______, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: \w+abcd and Input: ______
+
+Regex: [^abc], Input: xyz
+Unmatched closing ], i = 1 for regex substr  ^abc]
+Unmatched closing ], i = 2 for regex substr  abc]
+Unmatched closing ], i = 3 for regex substr  bc]
+Unmatched closing ], i = 4 for regex substr  c]
+Unmatched closing ], i = 5 for regex substr  ]
+No even partial match for Regex: [^abc] and Input: xyz
+
+Regex: [^abc], Input: x
+FULL MATCH: Pattern: [^abc], Input = x, matches: TRUE 
+There is a match for Regex: [^abc] and Input: x
+
+Regex: [^abc]def, Input: xd
+PARTIAL MATCH: Pattern: [^abc]def, Input = xd, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: [^abc]def and Input: xd
+
+Regex: ^[hc]at, Input: hat
+FULL MATCH: Pattern: ^[hc]at, Input = hat, matches: TRUE 
+There is a match for Regex: ^[hc]at and Input: hat
+
+Regex: ^[hc]at, Input: _hat
+Unmatched closing ], i = 2 for regex substr  hc]at
+Unmatched closing ], i = 3 for regex substr  c]at
+Unmatched closing ], i = 4 for regex substr  ]at
+No even partial match for Regex: ^[hc]at and Input: _hat
+
+Regex: s.*, Input: sequence
+FULL MATCH: Pattern: s.*, Input = sequence, matches: TRUE 
+There is a match for Regex: s.* and Input: sequence
+
+Regex: q.*, Input: sequence
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: .*, Input = sequence, matches: TRUE 
+There is a match for Regex: q.* and Input: sequence
+
+Regex: q.*, Input: q_sequence
+FULL MATCH: Pattern: q.*, Input = q_sequence, matches: TRUE 
+There is a match for Regex: q.* and Input: q_sequence
+
+Regex: [A-F]+[a-f]*[0-9]*, Input: abcd1234
+Unmatched closing ], i = 1 for regex substr  A-F]+[a-f]*[0-9]*
+Unmatched closing ], i = 2 for regex substr  -F]+[a-f]*[0-9]*
+Unmatched closing ], i = 3 for regex substr  F]+[a-f]*[0-9]*
+Unmatched closing ], i = 4 for regex substr  ]+[a-f]*[0-9]*
+Quantifier = +
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: [a-f]*[0-9]*, Input = abcd1234, matches: TRUE 
+There is a match for Regex: [A-F]+[a-f]*[0-9]* and Input: abcd1234
+
+Regex: [A-F]*[a-f]*[0-9]*, Input: abcd1234
+FULL MATCH: Pattern: [A-F]*[a-f]*[0-9]*, Input = abcd1234, matches: TRUE 
+There is a match for Regex: [A-F]*[a-f]*[0-9]* and Input: abcd1234
+
+Regex: [A-F][a-f]*[0-9]*, Input: abcd1234
+Unmatched closing ], i = 1 for regex substr  A-F][a-f]*[0-9]*
+Unmatched closing ], i = 2 for regex substr  -F][a-f]*[0-9]*
+Unmatched closing ], i = 3 for regex substr  F][a-f]*[0-9]*
+Unmatched closing ], i = 4 for regex substr  ][a-f]*[0-9]*
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: [a-f]*[0-9]*, Input = abcd1234, matches: TRUE 
+There is a match for Regex: [A-F][a-f]*[0-9]* and Input: abcd1234
+
+Regex: [A-F][a-f]*[0-9]*, Input: Eabcd1234
+FULL MATCH: Pattern: [A-F][a-f]*[0-9]*, Input = Eabcd1234, matches: TRUE 
+There is a match for Regex: [A-F][a-f]*[0-9]* and Input: Eabcd1234
+
+Regex: (^[2][5][0-5].|^[2][0-4][0-9].|^[1][0-9][0-9].|^[0-9][0-9].|^[0-9].)([2][0-5][0-5].|[2][0-4][0-9].|[1][0-9][0-9].|[0-9][0-9].|[0-9].)$, Input: 45.254
+FULL MATCH: Pattern: (^[2][5][0-5].|^[2][0-4][0-9].|^[1][0-9][0-9].|^[0-9][0-9].|^[0-9].)([2][0-5][0-5].|[2][0-4][0-9].|[1][0-9][0-9].|[0-9][0-9].|[0-9].)$, Input = 45.254, matches: TRUE 
+There is a match for Regex: (^[2][5][0-5].|^[2][0-4][0-9].|^[1][0-9][0-9].|^[0-9][0-9].|^[0-9].)([2][0-5][0-5].|[2][0-4][0-9].|[1][0-9][0-9].|[0-9][0-9].|[0-9].)$ and Input: 45.254
+
+Regex: ([0-9][0-9].|[0-9].)$, Input: 264
+FULL MATCH: Pattern: ([0-9][0-9].|[0-9].)$, Input = 264, matches: TRUE 
+There is a match for Regex: ([0-9][0-9].|[0-9].)$ and Input: 264
+
+Regex: ([0-9][0-9].|[0-9].)$, Input: 2
+PARTIAL MATCH: Pattern: ([0-9][0-9].|[0-9].)$, Input = 2, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: ([0-9][0-9].|[0-9].)$ and Input: 2
+
+Regex: ^[a-z0-9_-]{3,16}$, Input: my-us3r_n4m3
+FULL MATCH: Pattern: ^[a-z0-9_-]{3,16}$, Input = my-us3r_n4m3, matches: TRUE 
+There is a match for Regex: ^[a-z0-9_-]{3,16}$ and Input: my-us3r_n4m3
+
+Regex: ^(\d+)\.(\d+)\.(\d+)\.(\d+)$, Input: 177.255.255.255
+FULL MATCH: Pattern: ^(\d+)\.(\d+)\.(\d+)\.(\d+)$, Input = 177.255.255.255, matches: TRUE 
+There is a match for Regex: ^(\d+)\.(\d+)\.(\d+)\.(\d+)$ and Input: 177.255.255.255
+
+Regex: ^(\d+)\.(\d+)\.(\d+)\.(\d+)$, Input: 177.255.255
+PARTIAL MATCH: Pattern: ^(\d+)\.(\d+)\.(\d+)\.(\d+)$, Input = 177.255.255, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: ^(\d+)\.(\d+)\.(\d+)\.(\d+)$ and Input: 177.255.255
+
+Regex: (<.*>), Input: <p><b>Wikipedia</b>
+FULL MATCH: Pattern: (<.*>), Input = <p><b>Wikipedia</b>, matches: TRUE 
+There is a match for Regex: (<.*>) and Input: <p><b>Wikipedia</b>
+
+Regex: (<.*?>), Input: <p><b>Wikipedia</b>
+FULL MATCH: Pattern: (<.*?>), Input = <p><b>Wikipedia</b>, matches: TRUE 
+There is a match for Regex: (<.*?>) and Input: <p><b>Wikipedia</b>
+
+Regex: ^[a-z0-9-]+\d+$, Input: my-title-here
+PARTIAL MATCH: Pattern: ^[a-z0-9-]+\d+$, Input = my-title-here, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: ^[a-z0-9-]+\d+$ and Input: my-title-here
+
+Regex: ^[a-z0-9-]+$, Input: my_title_here
+Unmatched closing ], i = 2 for regex substr  a-z0-9-]+$
+Unmatched closing ], i = 3 for regex substr  -z0-9-]+$
+Unmatched closing ], i = 4 for regex substr  z0-9-]+$
+Unmatched closing ], i = 5 for regex substr  0-9-]+$
+Unmatched closing ], i = 6 for regex substr  -9-]+$
+Unmatched closing ], i = 7 for regex substr  9-]+$
+Unmatched closing ], i = 8 for regex substr  -]+$
+Unmatched closing ], i = 9 for regex substr  ]+$
+Quantifier = +
+No even partial match for Regex: ^[a-z0-9-]+$ and Input: my_title_here
+
+Regex: A{2,9}xyz, Input: AAAAAxy
+PARTIAL MATCH: Pattern: A{2,9}xyz, Input = AAAAAxy, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: A{2,9}xyz and Input: AAAAAxy
+
+Regex: ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$, Input: john@doe.com
+FULL MATCH: Pattern: ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$, Input = john@doe.com, matches: TRUE 
+There is a match for Regex: ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$ and Input: john@doe.com
+
+Regex: ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$, Input: john@doe.something
+PARTIAL MATCH: Pattern: ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$, Input = john@doe.something, matches: FALSE, hitEnd match: TRUE 
+There is a match for Regex: ^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$ and Input: john@doe.something
+
+Regex: ^([a-z0-9_\.-]+)@([\da-z\.-]+), Input: john@doe.something
+FULL MATCH: Pattern: ^([a-z0-9_\.-]+)@([\da-z\.-]+), Input = john@doe.something, matches: TRUE 
+There is a match for Regex: ^([a-z0-9_\.-]+)@([\da-z\.-]+) and Input: john@doe.something
+
+Regex: ^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$, Input: <a href="http://net.tutsplus.com/">Nettuts+</a>
+FULL MATCH: Pattern: ^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$, Input = <a href="http://net.tutsplus.com/">Nettuts+</a>, matches: TRUE 
+There is a match for Regex: ^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$ and Input: <a href="http://net.tutsplus.com/">Nettuts+</a>
+
+Regex: *****, Input: 123
+PatternSyntaxException: Dangling meta character '*' near index 0
+*****
+^No even partial match for Regex: ***** and Input: 123
+
+Regex: ?\d*, Input: 12
+PatternSyntaxException: Dangling meta character '?' near index 0
+?\d*
+^No even partial match for Regex: ?\d* and Input: 12
+
+Regex: 12\w, Input: 3
+PARTIAL MATCH ('Input' is not equal to 'Regex'): Pattern: \w, Input = 3, matches: TRUE 
+There is a match for Regex: 12\w and Input: 3
