@@ -8,8 +8,8 @@
 
 ### The main idea of the algorithm 
 
-   The main idea of the algorithm is to get all substrings of the given regular expression **Regex** and to apply the method   
-_hitEnd()_ of the class _java.util.regex.Matcher_. If the examined string _Input_ matches some substring of **Regex** then this    substring _Input_ can be completed to the string which is in full match to **Regex**. The proof of the last suggestion is not so     trivial, but it is    checked on all pairs contained in the file _RegexInputFile_.     
+   The main idea of the algorithm is to get all substrings of the given regular expression _Regex_ and to apply the method   
+_hitEnd()_ of the class _java.util.regex.Matcher_. If the examined string _Input_ matches some substring of _Regex_ then this    substring _Input_ can be completed to the string which is in full match to _Regex_. The proof of the last suggestion is not so     trivial, but it is    checked on all pairs contained in the file _RegexInputFile_.     
 
    Consider an example:  _Regex = “[A-F][a-f]*[0-9]*_. The string _Input_ = _abcd1234_ is in the full match with the sub-expression     _[a-f]*[0-9]*”_  The string Input can be completed, e.g. to _Eabcd1234_ which is already in full match with **Regex**.These examples      are taken from the file _RegexInputFile_.        
 
@@ -235,6 +235,8 @@ cde)fgh                              fgh
 [java.util.regex.Matcher](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html)   
 [java.util.regex.PatternSyntaxException](http://docs.oracle.com/javase/7/docs/api/java/util/regex/PatternSyntaxException.html)     
 [Java Regex Tutorial](http://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+
+
 
 
 
