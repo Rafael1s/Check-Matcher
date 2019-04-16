@@ -125,4 +125,40 @@ _java.util.regex.PatternSyntaxException_ of the package _java.util.regex_.
 This class contains the methods performing addition checks for the _substrRegex_.
 
 
+## 4. Testing,  the classes Reader,  LineRegexInput 
+
+### Loop by all pairs (Regex, Input), class TestMatch
+
+All  lines (_Regex_, _Input_) are contained in the file _RegexInputFile.txt_
+The class _TestMatch_ (method _main_) reads all lines from this file and saves them in the array  
+ArrayList<LineRegexInput> arrayLines. Then TestMatch launches the method   
+
+   public void loopByRegexAndInputLine(ArrayList<LineRegexInput>  arrayLines)  
+
+from the class _PartialMatch.
+
+### Read from the file RegexInputFile.txt, class Reader
+
+The method 
+
+   public  boolean readLinesRegexInput(String file)
+   
+of the class _Reader_ reads all lines from the file = “filename”,  the current file name is _RegexInputFile.txt_.   
+Every line of the file is the line (Regex, Input).   Any line containing the symbol “;” at the position 0 is   
+the comment line which is dropped.  Any empty line also will be dropped. If string _Input_ contains spaces then    
+use quotes like "Hello World".  If string Input contains quotes  then use single quotes like    
+'<a href="http://net.tutsplus.com/">Nettuts+</a>'. This allows check any string containing quotes " or single quotes '.  
+
+### Tokenizer,  the class LineRegexInput
+
+The method _readLinesRegexInput()_ calls the method _tokenize(String line)_ for any pair (_Regex_, _Input_).    
+The metod  tokenize() uses the class java.util.StringTokenizer. The method _getSecondToken(String str, StringTokenizer strTr)_    
+is used for getting parameter Input taking into account all conditions related  to quotes mentioned above.    
+
+For every pair (_Regex_, _Input_) the new instance of the class LineRegexInput is created and added to the _arrayLines_ 
+of the type _ArrayList<LineRegexInput>._ 
+
+
+_
+
 
