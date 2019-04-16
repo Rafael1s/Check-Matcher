@@ -237,6 +237,16 @@ cde)fgh                              fgh
 [Java Regex Tutorial](http://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
 
 
+### Java methods _matches()_  and _hitEnd()_
+
+[Java Regular Expressions](http://www.tutorialspoint.com/java/java_regular_expressions.htm)    
+[Partial Matches](http://stackoverflow.com/questions/2526756/can-java-util-regex-pattern-do-partial-matches)     
+[Trouble Implementing Partial Matches](http://stackoverflow.com/questions/7085389/trouble-implementing-partial-matches-with-regular-expression-on-android)         
+[Pattern Matching strange GBehaviour](http://stackoverflow.com/questions/14441070/java-pattern-matching-strange-behaviour)   
+
+
+
+
 
 
 
