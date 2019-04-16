@@ -195,6 +195,7 @@ a{3,5}b                                        aaab
 s.*                                            sequence
 ^(\d+)\.(\d+)\.(\d+)\.(\d+)$                   177.255.255.255
 
+
 ### ‘No Match’ examples of (_Regex_, _Input_) 
 ^\w+$                                          "Hello World"
 ^\w+$                                          "     "
@@ -244,14 +245,11 @@ cde)fgh                              fgh
 [Trouble Implementing Partial Matches](http://stackoverflow.com/questions/7085389/trouble-implementing-partial-matches-with-regular-expression-on-android)         
 [Pattern Matching strange GBehaviour](http://stackoverflow.com/questions/14441070/java-pattern-matching-strange-behaviour)   
 
+###  Examples of regular expressions
+[Exmaples](http://ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/)     
+[8 regular expressions you should know](http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149)     
+                                                                   
 
 
-
-
-
-
-
-
-_
 
 
