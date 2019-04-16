@@ -223,8 +223,18 @@ cde)fgh                              fgh
 6.	More anchoring scenarios    
 7.	More comprehensive scenarios with grouping and parentheses
 
+## 6. References
 
+[Wiki](http://en.wikipedia.org/wiki/Regular_expression)     
+[MSDN](http://msdn.microsoft.com/en-us/library/az24scfc%28v=vs.110%29.aspx)         
+[Quick Reference](http://www.autohotkey.com/docs/misc/RegEx-QuickRef.htm)    
 
+ ### Java and Regular Expressions
+
+[java.util.regex.Pattern](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)   
+[java.util.regex.Matcher](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html)   
+[java.util.regex.PatternSyntaxException](http://docs.oracle.com/javase/7/docs/api/java/util/regex/PatternSyntaxException.html)     
+[Java Regex Tutorial](http://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
 
 
 
